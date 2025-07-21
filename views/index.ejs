@@ -7,12 +7,13 @@
 </head>
 <body>
 <% if (user) { %>
-<h1>Welcome to the app, <%= user.username %>!</h1>
+<h1>kenal system</h1>
 <a href="/auth/sign-out">Sign out</a>
 <% } else { %>
-<h1>Welcome to the app, guest.</h1>
+<h1>Welcome to the kenal system.</h1>
+<h2>Please log in if you are a current staff member and Pleace create an account if you are new </h2>
 <p>
-  <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">sign in</a>.
+  <a href="/auth/sign-up">Create Account</a> or <a href="/auth/sign-in">Log in to Current Account</a>.
 </p>
 <% } %>
 </body>
