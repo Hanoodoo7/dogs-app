@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +10,13 @@
 <% if (user) { %>
 <h1>kenal system</h1>
 <a href="/auth/sign-out">Sign out</a>
+<a class="nav-link" href="/listings/new">Add a Listing</a>
 <% } else { %>
 <h1>Welcome to the kenal system.</h1>
 <h2>Please log in if you are a current staff member and Pleace create an account if you are new </h2>
 <p>
   <a href="/auth/sign-up">Create Account</a> or <a href="/auth/sign-in">Log in to Current Account</a>.
+  <a href="/listings/<%= listing._id %>" class="btn btn-primary">View Listing</a>
 </p>
 <% } %>
 </body>
