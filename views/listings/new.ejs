@@ -1,0 +1,58 @@
+<%- include('../partials/head') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+</head>
+<body>
+
+<form action="/listings" method="POST" class="container mt-4" style="max-width: 600px;">
+  <h2 class="mb-4">Add a New Pet</h2>
+
+    <div class="mb-3">
+    <label for="title" class="form-label">Owners Name:</label>
+    <input type="Owners Name" name="Owners Name" id="Owners Name" class="form-control"  />
+  </div>
+
+    <div class="mb-3">
+    <label for="price" class="form-label">Phone Number:</label>
+    <input type="number" name="Phone Number" id="Phone Number" class="form-control" min="0"  />
+  </div>
+
+  <div class="mb-3">
+    <label for="title" class="form-label">Pets Name:</label>
+    <input type="Pets Name" name="Pets Name" id="Pets Name" class="form-control" required />
+  </div>
+
+
+  <div class="mb-3">
+    <label for="Age" class="form-label"> Pets Age:</label>
+    <input type="number" name="Age" id="Age" class="form-control" min="0"  />
+  </div>
+
+ <div class="mb-3">
+    <label for="Weight" class="form-label"> Pets Weight:</label>
+    <input type="number" name="Weight" id="Weight" class="form-control" min="0" required />
+  </div>
+
+    <div class="mb-3">
+    <label for="description" class="form-label">Owners instructions of care:</label>
+    <textarea name="instructions" id="instructions" class="form-control" rows="1" ></textarea>
+  </div>
+
+    <div class="mb-3">
+    <label for="title" class="form-label">Alergies and Medications:</label>
+    <input type="M&A" name="M&A" id="M&A" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label for="image" class="form-label">Image URL</label>
+    <input type="text" name="image" id="image" class="form-control" />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create Listing</button>
+</form>
+</body>
+</html>

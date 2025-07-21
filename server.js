@@ -1,3 +1,4 @@
+const path = require('path')
 require('dotenv').config({ quiet: true })
 const express = require('express')
 const app = express()
@@ -12,6 +13,8 @@ const passUserToView = require('./middleware/pass-user-to-view')
 const listingsController = require('./controllers/listings.controller')
 
 
+
+
 // DATABASE CONNECTION
 mongoose.connect(process.env.MONGODB_URI)
 mongoose.connection.on('connected', () => {
@@ -19,10 +22,10 @@ mongoose.connection.on('connected', () => {
 })
 
 // MIDDLEWARE
-app.use('/listings', listingsController)
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 app.use(morgan('dev'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -33,18 +36,25 @@ app.use(session({
 }))
 app.use(passUserToView)
 
+
+// takes to index.ejs file 
 app.get('/', (req, res) => {
     res.render('index.ejs', { title: 'my App'})
 })
 
 // ROUTES
 app.use('/auth', authController)
+app.use('/listings', isSignedIn, listingsController)
+
+
 
 app.get('/vip-lounge', isSignedIn, (req, res) => {
     res.send(`Welcome ✨`)
 })
 
+//takes the port from the .env file
 const port = process.env.PORT ? process.env.PORT : "3000"
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}`)
 })
+
