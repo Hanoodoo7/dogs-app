@@ -1,7 +1,7 @@
 <%- include('../partials/head') %>
 
 <div class="container mt-4">
-  <h1 class="text-center mb-4">Marketplace Listings</h1>
+  <h1 class="text-center mb-4">Pets staying with us right now</h1>
 
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <% foundListings.forEach((listing) => { %>
@@ -13,7 +13,8 @@
             <p class="card-text"><%= listing.description %></p>
             <p class="card-text"><strong><%= listing.price %> Age</strong></p>
             <!-- Button to view listing will be broken until next section -->
-            <a href="/listings/<%= listing._id %>" class="btn btn-primary">View Pet</a>
+            <!-- <a href="/listings/ <%= listing._id %>" class="btn btn-primary">View Pet</a> -->
+            <a href="/listings/<%= listing._id %>" class="btn btn-primary">View Listing</a>
           </div>
         </div>
       </div>
