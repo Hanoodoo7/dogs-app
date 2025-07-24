@@ -1,13 +1,16 @@
 body {
-    background-color: cornsilk;
+    background-color: rgb(223, 182, 18);
     text-align: center;
 }
 
-/* form {
+form {
     display: flex;
     flex-direction: column;
     width: 90vw;
-} */
+    border: 30px;
+    background-color: rgb(237, 7, 7);
+
+}
 
 .listing-img {
     width: 50vw;

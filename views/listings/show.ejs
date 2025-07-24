@@ -9,14 +9,14 @@
   <p><strong>Age:</strong> <%=foundListing.price %> years old</p>
   <p><strong>Pets info</strong> <%=foundListing.description %></p>
 
-  <% if (foundListing.seller._id.equals(user._id)) { %>
+ 
     <div class="d-flex justify-content-between mb-4">
       <form action="/listings/<%= foundListing._id %>?_method=DELETE" method="POST">
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <button type="submit" class="btn btn-danger">Stay ended</button>
       </form>
       <a href="/listings/<%= foundListing._id %>/edit" class="btn btn-warning">Edit</a>
     </div>
-  <% } %>
+ 
 
   <h3 class="text-center">Staff Comment's<samp></samp></h3>
   <form action="/listings/<%= foundListing._id %>/comments" method="POST" class="mb-4">
