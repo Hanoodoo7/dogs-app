@@ -41,9 +41,9 @@ app.get('/', (req, res) => {
 app.use('/auth', authController)
 app.use('/listings', listingController)
 
-app.get('/vip-lounge', isSignedIn, (req, res) => {
-    res.send(`Welcome ✨`)
-})
+// app.get('/vip-lounge', isSignedIn, (req, res) => {
+//     res.send(`Welcome ✨`)
+// })
 
 const port = process.env.PORT ? process.env.PORT : "3000"
 app.listen(port, () => {
