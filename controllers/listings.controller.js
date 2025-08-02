@@ -18,7 +18,8 @@ router.post('/', isSignedIn, upload.single('image'), async (req, res) => {
             url: req.file.path,
             cloudinary_id: req.file.filename
         }
-        await Listing.create(req.body)
+        const { title, description, price, age, image } = req.body;
+await Listing.create({ title, description, price, age, image, seller: req.session.user._id });
         res.redirect('/listings')
     } catch (error) {
         console.log(error)

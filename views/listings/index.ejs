@@ -10,6 +10,8 @@
           <img src="<%= listing.image.url %>" class="card-img-top" alt="Image of <%= listing.title %>">
           <div class="card-body">
             <h5 class="card-title"><%= listing.title %></h5>
+            <p class="card-text"><%= listing.description %></p>
+            <p class="card-text"><strong><%= listing.price %> Years old</strong></p>
             <a href="/listings/<%= listing._id %>" class="btn btn-primary">View pet</a>
           </div>
         </div>
